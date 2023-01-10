@@ -1,0 +1,85 @@
+.footer {
+	background-color: map-get($colors, secondary);
+	@include padding-top(5rem);
+	@include padding-bottom(5rem);
+
+	&__container {
+		display: flex;
+		column-gap: 12rem;
+	}
+	&__logo svg > g > path:first-child {
+		fill: map-get($colors, supportLight1);
+	}
+	&__easybank {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		row-gap: 2rem;
+	}
+	&__social {
+		display: flex;
+
+		li:first-child a {
+			padding-left: 0;
+		}
+		a {
+			display: block;
+			padding: 0.5rem;
+			path {
+				@include transition("button", fill);
+			}
+			@include respDT {
+				&:hover path {
+					fill: map-get($colors, primary);
+				}
+			}
+			&:active path {
+				fill: map-get($colors, secondaryLight)
+			}
+		}
+	}
+	&__links a {
+		display: block;
+		color: map-get($colors, supportLight3);
+		padding: 0.5rem 0;
+		@include font-size(map-get($fontSizes, bodySm));
+		@include state("button", (
+			default: (color: map-get($colors, supportLight3)),
+			hover: (color: map-get($colors, primary)),
+			active: (color: map-get($colors, secondaryLight)),
+		))
+	}
+	&__author {
+		margin-left: auto;
+		text-align: right;
+
+		&Btn {
+			display: inline-block;
+			margin-left: auto;
+			margin-bottom: 4rem;
+		}
+		&Text {
+			color: map-get($colors, supportLight4);
+			@include font-size(map-get($fontSizes, small));
+
+			@include respDT	{
+				span {
+					@include font-size(map-get($fontSizes, bodySm));
+					@include transition("button", color);
+				}
+				&:hover span {
+					color: map-get($colors, primary);
+				}
+			}
+			a {
+				display: inline-block;
+				padding: 0.2rem 0;
+				@include state("button", (
+					default: (color: map-get($colors, primary)),
+					hover: (color: map-get($colors, secondaryLight)),
+					active: (color: map-get($colors, supportLight3))
+				));
+			}
+		}
+	}
+}

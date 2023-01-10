@@ -1,0 +1,3 @@
+@mixin primaryGradient($angle) {
+	background: linear-gradient($angle, map-get($colors, primary), map-get($colors, secondaryLight));
+}

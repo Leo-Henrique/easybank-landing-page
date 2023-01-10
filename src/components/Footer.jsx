@@ -24,7 +24,8 @@ const Footer = () => {
 		return (
 			<>
 				{links.map((col, index) => (
-					<div key={index}>
+					<div key={index}
+					className="footer__links">
 						<nav>
 							<ul>
 								{col.map((link, index) => (
@@ -41,15 +42,17 @@ const Footer = () => {
 	}
 
     return (
-		<footer>
-			<div className="container">
-				<div>
-					<Logo />
+		<footer className="footer">
+			<div className="footer__container container">
+				<div className="footer__easybank">
+					<Logo classes="footer__logo" />
 
-					<ul>
+					<ul className="footer__social">
 						{social.map((network, index) => (
 							<li key={index}>
-								{React.createElement(network)}
+								<a href="#">
+									{React.createElement(network)}
+								</a>
 							</li>
 						))}
 					</ul>
@@ -57,10 +60,10 @@ const Footer = () => {
 
 				{Links()}
 
-				<div>
-					<Button />
+				<div className="footer__author">
+					<Button classes="footer__authorBtn" />
 
-					<div>
+					<div className="footer__authorText">
 						<p>
 							Desenvolvido com <span>&hearts;</span>, React e SASS! Por {"\n"}
 							<a href="https://www.linkedin.com/in/leonardo-henrique-/"

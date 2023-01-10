@@ -1,0 +1,28 @@
+.benefits {
+	background-color: map-get($colors, supportLight3);
+	@include padding-top(10rem);
+	@include padding-bottom(10rem);
+
+	&__title {
+		margin-bottom: 3rem;
+		max-width: 500px;
+	}
+	&__desc {
+		max-width: 615px;
+	
+		@include margin-bottom(7rem);
+	}
+	&__list {
+		display: flex;
+		justify-content: center;
+		gap: 3rem;
+	}
+	&__item {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		row-gap: 2rem;
+		@include font-size(1.6rem);
+		line-height: 1.5;
+	}
+}

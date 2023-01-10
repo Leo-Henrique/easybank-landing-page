@@ -25,14 +25,18 @@ $grid: (
 );
 
 $fontSizes: (
-    h1: 5.2rem,
+    h1: 5.6rem,
     h2: 4.2rem,
+	h3: 2.6rem,
     body: 1.8rem,
+	bodySm: 1.5rem,
+	small: 1.3rem
 );
 
 $colors: (
     primary: #31d35c,
     secondary: #2d314d,
+	secondaryDark: darken(#2d314d, 40%), 
     secondaryLight: #2bb7da,
     supportLight1: #fff,
     supportLight2: #fafafa,
@@ -45,3 +49,9 @@ $transitions: (
     buttonDuration: 200ms,
     timingFunction: ease-in-out,
 );
+
+$zIndex: (
+	header: 5,
+	introContent: 10,
+	introMockup: 10,
+)

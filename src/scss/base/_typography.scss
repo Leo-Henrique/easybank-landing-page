@@ -1,6 +1,28 @@
 body {
 	@include font-size(map-get($fontSizes, body));
-	line-height: 1.5;
-	font-weight: 400;
+	line-height: 1.55;
+	font-weight: 500;
 	font-family: 'Public Sans', sans-serif;
+	color: map-get($colors, supportLight4);
+
+	@include respBKP(sm) {
+		@include font-size(map-get($fontSizes, bodySm));
+	}
+}
+h1, h2, h3 {
+	color: map-get($colors, secondary);
+	font-weight: 300;
+}
+h1 {
+	@include font-size(map-get($fontSizes, h1));
+	line-height: 1.1;
+	font-weight: 500;
+}
+h2 {
+	@include font-size(map-get($fontSizes, h2));
+	line-height: 1.2;
+}
+.h3 {
+	@include font-size(map-get($fontSizes, h3));
+	line-height: 1.3;
 }

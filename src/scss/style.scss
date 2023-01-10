@@ -2,7 +2,8 @@
 @import 
 "utilities/variables",
 "/node_modules/rfs/scss",
-"utilities/mixins";
+"utilities/mixins",
+"utilities/projectMixins";
 
 // global styles
 @import 
@@ -11,5 +12,18 @@
 "base/typography";
 
 // layout
+@import 
+"layout/grid",
+"layout/header",
+"layout/logo",
+"layout/footer";
 
 // components
+@import 
+"components/button";
+
+// pages
+@import 
+"home/main",
+"home/benefits",
+"home/articles";

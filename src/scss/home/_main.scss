@@ -1,0 +1,68 @@
+.main {
+	$imgDisplacementTop: -125px;
+	$imgDisplacementTopXl: -100px;
+	$imgDisplacementRight: 140px;
+	$imgMarginY: 40px;
+	$imgMarginX: 20px;
+
+	background-color: map-get($colors, supportLight2);
+	display: flex;
+	// > * {
+	// 	border: 1px solid red;
+	// }
+	// &__img {
+		// border: 1px solid blue;
+	// }
+
+	&__content {
+		width: 100%;
+		position: relative;
+		z-index: map-get($zIndex, introContent);
+		@include padding-top(18rem);
+		@include padding-bottom(18rem);
+	}
+	&__mockup {
+		width: 50%;
+		position: relative;
+	}
+	&__title,
+	&__desc {
+		max-width: 480px;
+		
+		@include respBKP(xl) {
+			max-width: 430px;
+		}
+	}
+	&__title {
+		margin-bottom: 3rem;
+	}
+	&__desc {
+		margin-bottom: 4rem;
+	}
+	&__bg,
+	&__img {
+		width: calc(100% + $imgDisplacementRight);
+	}
+	&__bg {
+		height: 100%;
+		background: url("/src/assets/bg-intro-desktop.svg") -40% 72% / auto no-repeat;
+		margin-left: -$imgDisplacementRight;
+
+		@include respBKP(xxl) {
+			background-position: 0 70%;
+		}
+	}
+	&__img {
+		max-width: initial;
+		position: absolute;
+		top: $imgDisplacementTop - $imgMarginY;
+		max-height: 941px;
+		object-fit: contain;
+		object-position: calc(100% + $imgDisplacementRight - $imgMarginX) $imgMarginY;
+
+		@include respBKP(xl) {
+			top: $imgDisplacementTopXl;
+			object-position: calc(100% + $imgDisplacementRight - $imgMarginX) 0;
+		}
+	}
+}

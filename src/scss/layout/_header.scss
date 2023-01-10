@@ -1,0 +1,73 @@
+.header {
+	$paddingXAnchor: 1.5rem;
+	width: 100%;
+	background-color: map-get($colors, supportLight1);
+	position: relative;
+	z-index: map-get($zIndex, header);
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		column-gap: 3rem;
+
+		// border: 1px solid red;
+		// > *:not(.btn) {
+		// 	border: 1px solid blue;
+		// }
+	}
+	&__toggler {
+		display: none;
+		@include transition("button", opacity);
+	}
+	&__nav {
+		@include respBKP(lg) {
+			// display: none;
+		}
+	}
+	&__list {
+		display: flex;
+	}
+	&__item {
+		@include respBKP(lg) {
+			&:last-child .header__anchor {
+				padding-right: 0;
+			}
+		}
+	}
+	&__anchor {
+		display: block;
+		position: relative;
+		padding: 3rem $paddingXAnchor;
+		white-space: nowrap;
+		@include font-size(map-get($fontSizes, bodySm));
+		@include state("button", (
+			default: (color: map-get($colors, supportLight4)),
+			hover: (color: map-get($colors, secondary)),
+			active: (color: map-get($colors, secondaryDark))
+		));
+		@include respDT {
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				bottom: 0;
+				height: 5px;
+				width: 0;
+				opacity: 1;
+				@include primaryGradient(to right);
+				@include transition("button", width, opacity);
+				transition-delay: 100ms;
+			}
+			&:hover::after {
+				opacity: 1;
+				width: calc(100% - $paddingXAnchor * 2);
+			}
+		}
+	}
+	&__btn {
+		@include respBKP(lg) {
+			display: none;
+		}
+	}
+}

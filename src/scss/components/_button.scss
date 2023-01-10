@@ -1,0 +1,16 @@
+.btn {
+	padding: 1.2rem 3rem;
+	font-weight: 700;
+	white-space: nowrap;
+	text-align: center;
+	border-radius: 30px;
+	cursor: pointer;
+	color: map-get($colors, supportLight1);
+	@include font-size(map-get($fontSizes, bodySm));
+	@include primaryGradient(to right);
+	@include state("button", (
+		default: (opacity: 1),
+		hover: (opacity: 0.65),
+		active: (opacity: 0.35),
+	));
+}

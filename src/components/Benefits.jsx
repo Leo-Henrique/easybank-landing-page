@@ -29,24 +29,25 @@ const Benefits = () => {
 	];
 	
     return (
-		<section>
+		<section className="benefits">
 			<div className="container">
-				<h2>
+				<h2 className="benefits__title">
 					Porque escolher o Easybank?
 				</h2>
 
-				<p>
+				<p className="benefits__desc">
 					Aproveitamos o Open Banking para transformar sua conta bancária em seu centro financeiro. Controle suas finanças como nunca antes.
 				</p>
 
-				<ul>
+				<ul className="benefits__list">
 				{benefits.map(({ icon, title, desc }) => (
-					<li key={title}>
+					<li key={title} 
+					className="benefits__item">
 						<div>
 							{React.createElement(icon)}
 						</div>
 
-						<h3>{title}</h3>
+						<h3 className="h3">{title}</h3>
 
 						<p>{desc}</p>
 					</li>

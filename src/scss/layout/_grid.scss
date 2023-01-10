@@ -20,3 +20,26 @@
         max-width: 100%;
     }
 }
+.containerHalf {
+	max-width: map-get($grid, containerDefault) / 2;
+
+    @include respBKP(xxl) {
+        max-width: map-get($grid, containerXxl) / 2;
+    }
+    @include respBKP(xl) {
+        max-width: map-get($grid, containerXl) / 2;
+    }
+    @include respBKP(lg) {
+        max-width: map-get($grid, containerLg) / 2;
+    }
+    @include respBKP(md) {
+        max-width: map-get($grid, containerMd) / 2;
+    }
+    @include respBKP(sm) {
+        max-width: 100%;
+    }
+	&--left {
+		margin-left: auto;
+		padding-left: map-get($grid, gutter) / 2;
+	}
+}
