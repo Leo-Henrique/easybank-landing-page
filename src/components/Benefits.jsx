@@ -43,13 +43,13 @@ const Benefits = () => {
 				{benefits.map(({ icon, title, desc }) => (
 					<li key={title} 
 					className="benefits__item">
-						<div>
+						<div className="benefits__item__icon">
 							{React.createElement(icon)}
 						</div>
 
 						<h3 className="h3">{title}</h3>
 
-						<p>{desc}</p>
+						<p className="benefits__item__desc">{desc}</p>
 					</li>
 					))}
 				</ul>

@@ -49,7 +49,8 @@ const Footer = () => {
 
 					<ul className="footer__social">
 						{social.map((network, index) => (
-							<li key={index}>
+							<li key={index}
+							className="footer__social__item">
 								<a href="#">
 									{React.createElement(network)}
 								</a>
@@ -60,10 +61,10 @@ const Footer = () => {
 
 				{Links()}
 
-				<div className="footer__author">
-					<Button classes="footer__authorBtn" />
+				<div className="footer__texts">
+					<Button classes="footer__texts__btn" />
 
-					<div className="footer__authorText">
+					<div className="footer__texts__author">
 						<p>
 							Desenvolvido com <span>&hearts;</span>, React e SASS! Por {"\n"}
 							<a href="https://www.linkedin.com/in/leonardo-henrique-/"
@@ -74,7 +75,7 @@ const Footer = () => {
 						</p>
 						
 						<p>
-							Este é um desafio do {"\n"}
+							Desafio do {"\n"}
 							<a href="https://www.frontendmentor.io/"
 							target="_blank"
 							rel="external noopener noreferrer">

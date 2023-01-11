@@ -6,25 +6,64 @@
 	&__container {
 		display: flex;
 		column-gap: 12rem;
-	}
-	&__logo svg > g > path:first-child {
-		fill: map-get($colors, supportLight1);
+
+		@include respBKP(xl) {
+			column-gap: 6rem;
+		}
+		@include respBKP(lg) {
+			column-gap: 8rem;
+			row-gap: 6rem;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		@include respBKP(md) {
+			flex-direction: column;
+			align-items: center;
+			gap: initial;
+			text-align: center;
+		}
 	}
 	&__easybank {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		row-gap: 2rem;
+
+		@include respBKP(md) {
+			row-gap: 0.8rem;
+			margin-bottom: calc(3.5rem - 1.2rem - 0.8rem);
+		}
+	}
+	&__logo svg > g > path {
+		fill: map-get($colors, supportLight1);
+	}
+	&__logo {
+		@include respBKP(md) {
+			padding: 1.2rem;
+			@include center;
+		}
 	}
 	&__social {
 		display: flex;
 
-		li:first-child a {
-			padding-left: 0;
+		@include respBKP(md) {
+			flex-wrap: wrap;
+			justify-content: center;
 		}
-		a {
+		&__item:first-child a {
+			padding-left: 0;
+
+			@include respBKP(md) {
+				padding-left: 1rem;
+			}
+		}
+		&__item a {
 			display: block;
 			padding: 0.5rem;
+
+			@include respBKP(md) {
+				padding: 1.2rem 1rem;
+			}
 			path {
 				@include transition("button", fill);
 			}
@@ -38,10 +77,16 @@
 			}
 		}
 	}
+	&__links:nth-child(3) {
+		@include respBKP(md) {
+			margin-bottom: calc(3.5rem - 0.8rem);
+		}
+	}
 	&__links a {
 		display: block;
 		color: map-get($colors, supportLight3);
-		padding: 0.5rem 0;
+		padding: 0.8rem 0;
+		line-height: 1.35;
 		@include font-size(map-get($fontSizes, bodySm));
 		@include state("button", (
 			default: (color: map-get($colors, supportLight3)),
@@ -49,37 +94,51 @@
 			active: (color: map-get($colors, secondaryLight)),
 		))
 	}
-	&__author {
+	&__texts {
 		margin-left: auto;
 		text-align: right;
 
-		&Btn {
+		@include respBKP(lg) {
+			margin-left: initial;
+			text-align: center;
+		}
+		&__btn {
 			display: inline-block;
 			margin-left: auto;
 			margin-bottom: 4rem;
+
+			@include respBKP(lg) {
+				margin-left: initial;
+				margin-bottom: 3rem;
+			}
+
 		}
-		&Text {
+		&__author {
 			color: map-get($colors, supportLight4);
 			@include font-size(map-get($fontSizes, small));
-
+			line-height: 1.35;
+			
 			@include respDT	{
-				span {
-					@include font-size(map-get($fontSizes, bodySm));
-					@include transition("button", color);
-				}
 				&:hover span {
 					color: map-get($colors, primary);
 				}
 			}
-			a {
-				display: inline-block;
-				padding: 0.2rem 0;
-				@include state("button", (
-					default: (color: map-get($colors, primary)),
-					hover: (color: map-get($colors, secondaryLight)),
-					active: (color: map-get($colors, supportLight3))
-				));
-			}
+		}
+		&__author p:first-child {
+			margin-bottom: 1rem;
+		}
+		&__author span {
+			@include font-size(map-get($fontSizes, bodySm));
+			@include transition("button", color);
+		}
+		&__author a {
+			display: inline-block;
+			padding: 0.2rem 0;
+			@include state("button", (
+				default: (color: map-get($colors, primary)),
+				hover: (color: map-get($colors, secondaryLight)),
+				active: (color: map-get($colors, supportLight3))
+			));
 		}
 	}
 }

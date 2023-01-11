@@ -47,7 +47,7 @@ const Articles = () => {
     return (
 		<section className="articles">
 			<div className="container">
-				<h2 className="articles__title">Latest Articles</h2>
+				<h2 className="articles__title">Artigos mais recentes</h2>
 
 				<div className="articles__list">
 					{articles.map(({ image, author, title, desc }, index) => (
@@ -59,11 +59,15 @@ const Articles = () => {
 							</div>
 
 							<div className="articles__content">
-								<span className="articles__author">Por {author}</span>
+								<span className="articles__content__author">Por {author}</span>
 
-								<h3 className="articles__titleArticle">{title}</h3>
+								<h3 className="articles__content__title">
+									<a href="#">
+										{title}
+									</a>
+								</h3>
 
-								<p className="articles__desc">{desc}</p>
+								<p className="articles__content__desc">{desc}</p>
 							</div>
 						</article>
 					))}
