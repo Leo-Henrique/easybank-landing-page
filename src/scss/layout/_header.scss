@@ -26,7 +26,11 @@
 			display: block;
 			padding: 1.2rem;
 			padding-right: 0;
+			cursor: pointer;
 
+			&.--hidden {
+				opacity: 0 !important;
+			}
 			@include state("button", (
 				default: (opacity: 1),
 				hover: (opacity: 0.7),
@@ -35,6 +39,7 @@
 		}
 	}
 	&__nav {
+		@include transition("global", opacity, transform);
 		@include respBKP(md) {
 			display: none;
 			background-color: map-get($colors, supportLight1);;
@@ -44,6 +49,16 @@
 			margin: 2rem calc(map-get($grid, gutter) / 2);
 			text-align: center;
 			box-shadow: 0 10px 17px rgba(0, 0, 0, 0.14);
+			opacity: 0;
+			transform: translate3d(0, -15px, 0);
+
+			&.--display {
+				display: block;
+			}
+			&.--displayed {
+				opacity: 1;
+				transform: none;
+			}
 		}
 	}
 	&__list {
@@ -98,6 +113,10 @@
 		@include respBKP(md) {
 			padding: 0.8rem 3rem;
 			font-size: 1.7rem;
+
+			&::after {
+				display: none;
+			}
 			@include state("button", (
 				default: (color: map-get($colors, secondary)),
 				hover: (color: map-get($colors, secondaryLight)),
