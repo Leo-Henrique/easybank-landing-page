@@ -1,128 +1,128 @@
 .main {
-	$imgDisplacementTop: -125px;
-	$imgDisplacementTopXl: -100px;
-	$imgDisplacementRight: 140px;
-	$imgMarginY: 40px;
-	$imgMarginX: 20px;
+    $imgDisplacementTop: -125px;
+    $imgDisplacementTopXl: -100px;
+    $imgDisplacementRight: 140px;
+    $imgMarginY: 40px;
+    $imgMarginX: 20px;
 
-	background-color: map-get($colors, supportLight2);
-	display: flex;
+    background-color: map-get($colors, supportLight2);
+    display: flex;
 
-	@include respBKP(lg) {
-		flex-direction: column;
-	}
-	&__content {
-		width: 100%;
-		position: relative;
-		z-index: map-get($zIndex, introContent);
-		@include padding-top(18rem);
-		@include padding-bottom(18rem);
+    @include breakpoint(lg) {
+        flex-direction: column;
+    }
+    &__content {
+        width: 100%;
+        position: relative;
+        z-index: map-get($zIndex, introContent);
+        @include padding-top(18rem);
+        @include padding-bottom(18rem);
 
-		@include respBKP(lg) {
-			position: initial;
-			z-index: initial;
-			padding-left: 15px;
-			padding-right: 15px;
-			@include padding-top(4rem);
-			@include padding-bottom(8rem);
-			max-width: map-get($grid, containerLg);
-			@include center;
-			text-align: center;
-			order: 1;
-		}
-		@include respBKP(md) {
-			max-width: map-get($grid, containerMd);
-		}
-		@include respBKP(sm) {
-			max-width: 100%;
-		}
-	}
-	&__mockup {
-		width: 50%;
-		position: relative;
+        @include breakpoint(lg) {
+            position: initial;
+            z-index: initial;
+            padding-left: 15px;
+            padding-right: 15px;
+            @include padding-top(4rem);
+            @include padding-bottom(8rem);
+            max-width: map-get($grid, containerLg);
+            @include center;
+            text-align: center;
+            order: 1;
+        }
+        @include breakpoint(md) {
+            max-width: map-get($grid, containerMd);
+        }
+        @include breakpoint(sm) {
+            max-width: 100%;
+        }
+    }
+    &__mockup {
+        width: 50%;
+        position: relative;
 
-		@include respBKP(lg) {
-			width: 100%;
-		}
-	}
-	&__title,
-	&__desc {
-		max-width: 480px;
-		
-		@include respBKP(xl) {
-			max-width: 430px;
-		}
-		@include respBKP(lg) {
-			max-width: 530px;
-			@include center;
-		}
-	}
-	&__title {
-		margin-bottom: 3rem;
+        @include breakpoint(lg) {
+            width: 100%;
+        }
+    }
+    &__title,
+    &__desc {
+        max-width: 480px;
 
-		@include respBKP(lg) {
-			margin-bottom: 2rem;
-		}
-	}
-	&__desc {
-		margin-bottom: 4rem;
+        @include breakpoint(xl) {
+            max-width: 430px;
+        }
+        @include breakpoint(lg) {
+            max-width: 530px;
+            @include center;
+        }
+    }
+    &__title {
+        margin-bottom: 3rem;
 
-		@include respBKP(lg) {
-			margin-bottom: 3rem;
-		}
-	}
-	&__bg,
-	&__img {
-		width: calc(100% + $imgDisplacementRight);
-	}
-	&__bg {
-		height: 100%;
-		background: url("/src/assets/bg-intro-desktop.svg") -40% 72% / auto no-repeat;
-		margin-left: -$imgDisplacementRight;
+        @include breakpoint(lg) {
+            margin-bottom: 2rem;
+        }
+    }
+    &__desc {
+        margin-bottom: 4rem;
 
-		@include respBKP(xxl) {
-			background-position: 0 70%;
-		}
-		@include respBKP(lg) {
-			background-position: 25% 90%;
-			background-size: 160%;
-			height: initial;
-			margin-left: initial;
-			width: 100%;
-		}
-		@include respBKP(md) {
-			background: url("/src/assets/bg-intro-mobile.svg") 0 0 / cover no-repeat;
-		}
-	}
-	&__img {
-		max-width: initial;
-		position: absolute;
-		top: $imgDisplacementTop - $imgMarginY;
-		max-height: 941px;
-		object-fit: scale-down;
-		object-position: calc(100% + $imgDisplacementRight - $imgMarginX) $imgMarginY;
+        @include breakpoint(lg) {
+            margin-bottom: 3rem;
+        }
+    }
+    &__bg,
+    &__img {
+        width: calc(100% + $imgDisplacementRight);
+    }
+    &__bg {
+        height: 100%;
+        background: url("/src/assets/bg-intro-desktop.svg") -40% 72% / auto no-repeat;
+        margin-left: -$imgDisplacementRight;
 
-		@include respBKP(xl) {
-			top: $imgDisplacementTopXl;
-			object-position: calc(100% + $imgDisplacementRight - $imgMarginX) 0;
-		}
-		@include respBKP(lg) {
-			max-width: 100%;
-			position: initial;
-			max-height: 650px;
-			object-fit: initial;
-			object-position: initial;
-			width: initial;
-			margin-top: -190px;
-			@include center;
-		}
-		@include respBKP(md) {
-			max-height: 500px;
-			margin-top: -145px;
-		}
-		@include respBKP(sm) {
-			max-height: 360px;
-			margin-top: -104px;
-		}
-	}
+        @include breakpoint(xxl) {
+            background-position: 0 70%;
+        }
+        @include breakpoint(lg) {
+            background-position: 25% 90%;
+            background-size: 160%;
+            height: initial;
+            margin-left: initial;
+            width: 100%;
+        }
+        @include breakpoint(md) {
+            background: url("/src/assets/bg-intro-mobile.svg") 0 0 / cover no-repeat;
+        }
+    }
+    &__img {
+        max-width: initial;
+        position: absolute;
+        top: $imgDisplacementTop - $imgMarginY;
+        max-height: 941px;
+        object-fit: scale-down;
+        object-position: calc(100% + $imgDisplacementRight - $imgMarginX) $imgMarginY;
+
+        @include breakpoint(xl) {
+            top: $imgDisplacementTopXl;
+            object-position: calc(100% + $imgDisplacementRight - $imgMarginX) 0;
+        }
+        @include breakpoint(lg) {
+            max-width: 100%;
+            position: initial;
+            max-height: 650px;
+            object-fit: initial;
+            object-position: initial;
+            width: initial;
+            margin-top: -190px;
+            @include center;
+        }
+        @include breakpoint(md) {
+            max-height: 500px;
+            margin-top: -145px;
+        }
+        @include breakpoint(sm) {
+            max-height: 360px;
+            margin-top: -104px;
+        }
+    }
 }

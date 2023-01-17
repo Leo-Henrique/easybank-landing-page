@@ -1,66 +1,62 @@
 // responsive
-@mixin respBKP($size) {
-	@media (
+@mixin breakpoint($size) {
+    @media (
 		#{map-get($mediaQuery, property)}:
 		#{
 			map-get(map-get($mediaQuery, sizes), $size) + 
 			map-get($mediaQuery, unit)
 		}
 	) {
-		@content;
-	}
+        @content;
+    }
 }
-@mixin respDT {
-	@media not all and (hover: none) {
-		@content;
-	}
+@mixin desktop {
+    @media not all and (hover: none) {
+        @content;
+    }
 }
-
 
 // transitions and states
-@mixin transition($element, $properties...) {
-	transition-property: $properties;
-	transition-timing-function: map-get($transitions, timingFunction);
+@mixin transition($type, $properties...) {
+	$transition: map-get($transitions, $type);
+    transition-property: $properties;
 
-	@if $element == "global" {
-		transition-duration: map-get($transitions, globalDuration);
-	} @else if $element == "button" {
-		transition-duration: map-get($transitions, buttonDuration);
-	} @else if $element == "animation" {
-		transition-duration: map-get($transitions, animationDuration);
+	@each $property, $value in $transition {
+		transition-#{$property}: $value
 	}
 }
-
 @mixin state($element, $states) {
-	$propertiesMap: map-get($states, default);
-	@include transition($element, map-keys($propertiesMap));
+    $propertiesMap: map-get($states, default);
+    @include transition($element, map-keys($propertiesMap));
 
-	@each $state, $properties in $states {
-		@each $property, $value in $properties {
-
-			@if $state == default {
-				#{$property}: $value;
-
-			} @else if $state == hover {
-				@include respDT {
-					&:hover {
-						#{$property}: $value;
-					}
-				}
-			} @else if $state == active {
-				&:active {
-					#{$property}: $value;
-				}
-			}
-		}
-	}
+    @each $state, $properties in $states {
+        @each $property, $value in $properties {
+            @if $state == default {
+                #{$property}: $value;
+            } @else if $state == hover {
+                @include desktop {
+                    &:hover {
+                        #{$property}: $value;
+                    }
+                }
+            } @else if $state == active {
+                &:active {
+                    #{$property}: $value;
+                }
+            }
+        }
+    }
 }
 
 // general
 @mixin center {
-	margin-left: auto;
-	margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 @mixin primaryGradient($angle) {
-	background: linear-gradient($angle, map-get($colors, primary), map-get($colors, secondaryLight));
+    background: linear-gradient(
+        $angle,
+        map-get($colors, primary),
+        map-get($colors, secondaryLight)
+    );
 }

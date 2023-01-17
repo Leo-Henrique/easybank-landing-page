@@ -1,132 +1,159 @@
 .header {
-	$paddingXAnchor: 1.5rem;
-	width: 100%;
-	background-color: map-get($colors, supportLight1);
-	position: relative;
-	z-index: map-get($zIndex, header);
+    $paddingXAnchor: 1.5rem;
+    width: 100%;
+    background-color: map-get($colors, supportLight1);
+    position: relative;
+    z-index: map-get($zIndex, header);
 
-	@include respBKP(md) {
-		padding: 1rem 0;
-	}
-	&__container {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		column-gap: 3rem;
+    @include breakpoint(md) {
+        padding: 1rem 0;
+    }
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 3rem;
 
-		@include respBKP(md) {
-			position: relative;
-		}
-	}
-	&__toggler {
-		display: none;
-		@include transition("button", opacity);
+        @include breakpoint(md) {
+            position: relative;
+        }
+    }
+    &__toggler {
+        display: none;
+        @include transition("button", opacity);
 
-		@include respBKP(md) {
-			display: block;
-			padding: 1.2rem;
-			padding-right: 0;
-			cursor: pointer;
+        @include breakpoint(md) {
+            display: block;
+            padding: 1.2rem;
+            padding-right: 0;
+            cursor: pointer;
 
-			&.--hidden {
-				opacity: 0 !important;
-			}
-			@include state("button", (
-				default: (opacity: 1),
-				hover: (opacity: 0.7),
-				active: (opacity: 0.4),
-			));
-		}
-	}
-	&__nav {
-		@include transition("global", opacity, transform);
-		@include respBKP(md) {
-			display: none;
-			background-color: map-get($colors, supportLight1);;
-			border-radius: 5px;
-			position: absolute;
-			inset: 5.4rem 0 auto;
-			margin: 2rem calc(map-get($grid, gutter) / 2);
-			text-align: center;
-			box-shadow: 0 10px 17px rgba(0, 0, 0, 0.14);
-			opacity: 0;
-			transform: translate3d(0, -15px, 0);
+            &.--hidden {
+                opacity: 0 !important;
+            }
+            @include state(
+                "button",
+                (
+                    default: (
+                        opacity: 1,
+                    ),
+                    hover: (
+                        opacity: 0.7,
+                    ),
+                    active: (
+                        opacity: 0.4,
+                    ),
+                )
+            );
+        }
+    }
+    &__nav {
+        @include transition("global", opacity, transform);
+        @include breakpoint(md) {
+            display: none;
+            background-color: map-get($colors, supportLight1);
+            border-radius: 5px;
+            position: absolute;
+            inset: 5.4rem 0 auto;
+            margin: 2rem calc(map-get($grid, gutter) / 2);
+            text-align: center;
+            box-shadow: 0 10px 17px rgba(0, 0, 0, 0.14);
+            opacity: 0;
+            transform: translate3d(0, -15px, 0);
 
-			&.--display {
-				display: block;
-			}
-			&.--displayed {
-				opacity: 1;
-				transform: none;
-			}
-		}
-	}
-	&__list {
-		display: flex;
+            &.--display {
+                display: block;
+            }
+            &.--displayed {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    }
+    &__list {
+        display: flex;
 
-		@include respBKP(md) {
-			padding: calc(3rem - 0.8rem) 0;
-			flex-direction: column;
-		}
-	}
-	&__item {
-		@include respBKP(lg) {
-			&:last-child .header__anchor {
-				padding-right: 0;
-			}
-		}
-		@include respBKP(md) {
-			&:last-child .header__anchor {
-				padding-right: 3rem;
-			}
-		}
-	}
-	&__anchor {
-		display: block;
-		position: relative;
-		padding: 3rem $paddingXAnchor;
-		white-space: nowrap;
-		@include font-size(map-get($fontSizes, bodySm));
-		@include state("button", (
-			default: (color: map-get($colors, supportLight4)),
-			hover: (color: map-get($colors, secondary)),
-			active: (color: map-get($colors, secondaryDark))
-		));
-		@include respDT {
-			&::after {
-				content: "";
-				display: block;
-				position: absolute;
-				bottom: 0;
-				height: 5px;
-				width: 0;
-				opacity: 1;
-				@include primaryGradient(to right);
-				@include transition("button", width, opacity);
-				transition-delay: 100ms;
-			}
-			&:hover::after {
-				opacity: 1;
-				width: calc(100% - $paddingXAnchor * 2);
-			}
-		}
-		@include respBKP(md) {
-			padding: 0.8rem 3rem;
-			font-size: 1.7rem;
+        @include breakpoint(md) {
+            padding: calc(3rem - 0.8rem) 0;
+            flex-direction: column;
+        }
+    }
+    &__item {
+        @include breakpoint(lg) {
+            &:last-child .header__anchor {
+                padding-right: 0;
+            }
+        }
+        @include breakpoint(md) {
+            &:last-child .header__anchor {
+                padding-right: 3rem;
+            }
+        }
+    }
+    &__anchor {
+        display: block;
+        position: relative;
+        padding: 3rem $paddingXAnchor;
+        white-space: nowrap;
+        @include font-size(map-get($fontSizes, bodySm));
+        @include state(
+            "button",
+            (
+                default: (
+                    color: map-get($colors, supportLight4),
+                ),
+                hover: (
+                    color: map-get($colors, secondary),
+                ),
+                active: (
+                    color: map-get($colors, secondaryDark),
+                ),
+            )
+        );
+        @include desktop {
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: 0;
+                height: 5px;
+                width: 0;
+                opacity: 1;
+                @include primaryGradient(to right);
+                @include transition("button", width, opacity);
+                transition-delay: 100ms;
+            }
+            &:hover::after {
+                opacity: 1;
+                width: calc(100% - $paddingXAnchor * 2);
+            }
+        }
+        @include breakpoint(md) {
+            padding: 0.8rem 3rem;
+            font-size: 1.7rem;
 
-			&::after {
-				display: none;
-			}
-			@include state("button", (
-				default: (color: map-get($colors, secondary)),
-				hover: (color: map-get($colors, secondaryLight)),
-				active: (color: map-get($colors, primary))
-			));
-		}
-	}
-	&__btn {
-		@include respBKP(lg) {
-			display: none;
-		}
-	}
+            &::after {
+                display: none;
+            }
+            @include state(
+                "button",
+                (
+                    default: (
+                        color: map-get($colors, secondary),
+                    ),
+                    hover: (
+                        color: map-get($colors, secondaryLight),
+                    ),
+                    active: (
+                        color: map-get($colors, primary),
+                    ),
+                )
+            );
+        }
+    }
+    &__btn {
+        @include breakpoint(lg) {
+            display: none;
+        }
+    }
 }

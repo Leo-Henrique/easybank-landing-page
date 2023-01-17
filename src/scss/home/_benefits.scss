@@ -1,63 +1,63 @@
 .benefits {
-	background-color: map-get($colors, supportLight3);
-	@include padding-top(10rem);
-	@include padding-bottom(10rem);
+    background-color: map-get($colors, supportLight3);
+    @include padding-top(10rem);
+    @include padding-bottom(10rem);
 
-	@include respBKP(lg) {
-		@include padding-top(8rem);
-		@include padding-bottom(8rem);
-	}
+    @include breakpoint(lg) {
+        @include padding-top(8rem);
+        @include padding-bottom(8rem);
+    }
 
-	&__title {
-		margin-bottom: 3rem;
-		max-width: 530px;
+    &__title {
+        margin-bottom: 3rem;
+        max-width: 530px;
 
-		@include respBKP(lg) {
-			text-align: center;
-			margin-bottom: 2rem;
-			@include center;
-		}
-	}
-	&__desc {
-		max-width: 615px;
-	
-		@include margin-bottom(7rem);
+        @include breakpoint(lg) {
+            text-align: center;
+            margin-bottom: 2rem;
+            @include center;
+        }
+    }
+    &__desc {
+        max-width: 615px;
 
-		@include respBKP(lg) {
-			max-width: 530px;
-			text-align: center;
-			@include center;
-		}
-	}
-	&__list {
-		display: flex;
-		justify-content: center;
-		gap: 3rem;
+        @include margin-bottom(7rem);
 
-		@include respBKP(lg) {
-			flex-wrap: wrap;
-			gap: 3.5rem;
-			text-align: center;
-		}
-	}
-	&__item {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		row-gap: 2rem;
-		@include font-size(1.6rem);
-		line-height: 1.5;
+        @include breakpoint(lg) {
+            max-width: 530px;
+            text-align: center;
+            @include center;
+        }
+    }
+    &__list {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
 
-		@include respBKP(lg) {
-			flex: 1 1 300px;
+        @include breakpoint(lg) {
+            flex-wrap: wrap;
+            gap: 3.5rem;
+            text-align: center;
+        }
+    }
+    &__item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        @include font-size(1.6rem);
+        line-height: 1.5;
 
-			&__icon,
-			&__desc {
-				@include center;
-			}
-			&__desc {
-				max-width: 480px;
-			}
-		}
-	}
+        @include breakpoint(lg) {
+            flex: 1 1 300px;
+
+            &__icon,
+            &__desc {
+                @include center;
+            }
+            &__desc {
+                max-width: 480px;
+            }
+        }
+    }
 }

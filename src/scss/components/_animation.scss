@@ -2,16 +2,15 @@
     opacity: 0;
     transform: translate3d(0, -15px, 0);
     @include transition("animation", opacity, transform);
-	transition-timing-function: initial;
 }
 [data-animate="fadeRight"] {
-	transform: translate3d(-15px, 0, 0);
-	
-	@include respBKP(lg) {
-		transform: translate3d(0, -15px, 0);
-	}
+    transform: translate3d(-15px, 0, 0);
+
+    @include breakpoint(lg) {
+        transform: translate3d(0, -15px, 0);
+    }
 }
 [data-animate].--animated {
-	opacity: 1;
-	transform: none;
+    opacity: 1;
+    transform: none;
 }

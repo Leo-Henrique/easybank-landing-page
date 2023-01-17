@@ -1,89 +1,98 @@
 .articles {
-	background-color: map-get($colors, supportLight2);
-	@include padding-top(10rem);
-	@include padding-bottom(10rem);
+    background-color: map-get($colors, supportLight2);
+    @include padding-top(10rem);
+    @include padding-bottom(10rem);
 
-	@include respBKP(lg) {
-		@include padding-top(8rem);
-		@include padding-bottom(8rem);
-	}
+    @include breakpoint(lg) {
+        @include padding-top(8rem);
+        @include padding-bottom(8rem);
+    }
 
-	&__title {
-		@include margin-bottom(5rem);
-		max-width: 530px;
+    &__title {
+        @include margin-bottom(5rem);
+        max-width: 530px;
 
-		@include respBKP(lg) {
-			text-align: center;
-			@include center;
-		}
-	}
-	&__list {
-		display: flex;
-		column-gap: 3rem;
+        @include breakpoint(lg) {
+            text-align: center;
+            @include center;
+        }
+    }
+    &__list {
+        display: flex;
+        column-gap: 3rem;
 
-		@include respBKP(lg) {
-			gap: 2rem;
-			flex-wrap: wrap;
-			justify-content: center;
-		}
-	}
-	&__item {
-		flex: 1;
-		background-color: map-get($colors, supportLight1);
-		border-radius: 5px 5px 0 0;
-		overflow: hidden;
+        @include breakpoint(lg) {
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    &__item {
+        flex: 1;
+        background-color: map-get($colors, supportLight1);
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
 
-		@include respBKP(lg) {
-			flex: 1 300px;
-		}
-		@include respBKP(md) {
-			flex: 0 430px;
-		}
-	}
-	&__img img {
-		width: 100%;
-		height: 200px;
-		object-fit: cover;
-	}
-	&__content {
-		padding: 3rem;
+        @include breakpoint(lg) {
+            flex: 1 300px;
+        }
+        @include breakpoint(md) {
+            flex: 0 430px;
+        }
+    }
+    &__img img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    &__content {
+        padding: 3rem;
 
-		@include respBKP(xl) {
-			padding: 2rem;
-		}
-		@include respBKP(lg) {
-			padding: 3rem;
-		}
+        @include breakpoint(xl) {
+            padding: 2rem;
+        }
+        @include breakpoint(lg) {
+            padding: 3rem;
+        }
 
-		&__author {
-			display: block;
-			margin-bottom: 1.2rem;
-			@include font-size(map-get($fontSizes, small));
+        &__author {
+            display: block;
+            margin-bottom: 1.2rem;
+            @include font-size(map-get($fontSizes, small));
 
-			@include respBKP(sm) {
-				margin-bottom: 0.8rem;
-			}
-		}
-		&__title {
-			font-weight: 500;
-			line-height: 1.35;
-			margin-bottom: 1.2rem;
+            @include breakpoint(sm) {
+                margin-bottom: 0.8rem;
+            }
+        }
+        &__title {
+            font-weight: 500;
+            line-height: 1.35;
+            margin-bottom: 1.2rem;
 
-			@include respBKP(sm) {
-				margin-bottom: 0.8rem;
-				@include font-size(1.9rem);
-			}
-		}
-		&__title a {
-			display: block;
-			@include state("button", (
-				default: (color: map-get($colors, secondary)),
-				hover: (color: map-get($colors, primary)),
-				active: (color: map-get($colors, secondaryLight))
-			));
-		}
-		&__desc {
-			@include font-size(1.4rem);
-		}
-	}
+            @include breakpoint(sm) {
+                margin-bottom: 0.8rem;
+                @include font-size(1.9rem);
+            }
+        }
+        &__title a {
+            display: block;
+            @include state(
+                "button",
+                (
+                    default: (
+                        color: map-get($colors, secondary),
+                    ),
+                    hover: (
+                        color: map-get($colors, primary),
+                    ),
+                    active: (
+                        color: map-get($colors, secondaryLight),
+                    ),
+                )
+            );
+        }
+        &__desc {
+            @include font-size(1.4rem);
+        }
+    }
 }
