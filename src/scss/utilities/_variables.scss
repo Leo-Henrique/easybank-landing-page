@@ -45,8 +45,9 @@ $colors: (
 );
 
 $transitions: (
-    globalDuration: 300ms,
     buttonDuration: 200ms,
+	globalDuration: 300ms,
+	animationDuration: 600ms,
     timingFunction: ease-in-out,
 );
 

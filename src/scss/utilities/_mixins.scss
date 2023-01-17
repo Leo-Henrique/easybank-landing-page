@@ -26,6 +26,8 @@
 		transition-duration: map-get($transitions, globalDuration);
 	} @else if $element == "button" {
 		transition-duration: map-get($transitions, buttonDuration);
+	} @else if $element == "animation" {
+		transition-duration: map-get($transitions, animationDuration);
 	}
 }
 
