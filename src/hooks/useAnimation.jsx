@@ -20,8 +20,6 @@ export default function useAnimation() {
 					}
 				}, 0);
 			} else animate(entries[0]);
-	
-			console.log(entries)
 		};
 		const isVisible = new IntersectionObserver(callback, { threshold: 0.7 });
 	
