@@ -64,16 +64,15 @@ Confira o JSX curto equivalente do exemplo das classes anteriores. Removi todos 
   <div className="header__container container">
     <Logo classes="header__logo" />
 
-    <button
-      className="header__toggler">
+    <button className="header__toggler">
       {visibility ? <SVGClose /> : <SVGHamburger />}
     </button>
 
-    <nav className="header__nav" >
+    <nav className="header__nav">
       <ul className="header__list">
         {menu.map((item) => (
           <li className="header__item">
-            <a className="header__anchor" >
+            <a className="header__anchor">
               {item}
             </a>
           </li>
@@ -93,7 +92,7 @@ Em uma parte da estrutura surgiu um elemento em que o nome de sua classe era exa
 Eu já havia utilizado `articles__title`, portanto segui a hierarquia HTML e utilizei `articles_content__title` conforme o JSX abaixo para evitar resultados inesperados:
 
 ```jsx
-<article className="articles__item" >
+<article className="articles__item">
   <div className="articles__img">
     <img src={image.src} 
     alt={image.alt} />
