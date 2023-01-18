@@ -61,28 +61,28 @@ Confira o JSX curto equivalente do exemplo das classes anteriores. Removi todos 
 
 ```jsx
 <header className="header">
-	<div className="header__container container">
-		<Logo classes="header__logo" />
+  <div className="header__container container">
+    <Logo classes="header__logo" />
 
-		<button
-			className="header__toggler">
-			{visibility ? <SVGClose /> : <SVGHamburger />}
-		</button>
+    <button
+      className="header__toggler">
+      {visibility ? <SVGClose /> : <SVGHamburger />}
+    </button>
 
-		<nav className="header__nav" >
-			<ul className="header__list">
-				{menu.map((item) => (
-					<li className="header__item">
-						<a className="header__anchor" >
-							{item}
-						</a>
-					</li>
-				))}
-			</ul>
-		</nav>
+    <nav className="header__nav" >
+      <ul className="header__list">
+        {menu.map((item) => (
+          <li className="header__item">
+            <a className="header__anchor" >
+              {item}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
 
-		<Button classes="header__btn" />
-	</div>
+    <Button classes="header__btn" />
+  </div>
 </header>
 ```
 
