@@ -24,6 +24,7 @@ Não manter a **consistência do design** se tornou quase impossível com o conj
 * [SASS](https://sass-lang.com/)
 * [React](https://reactjs.org/)
 * [Vite](https://vitejs.dev/)
+* [leo-react-app](https://github.com/Leo-Henrique/leo-react-app)
 
 ## 💡 Aprendizados e principais recursos
 
@@ -37,18 +38,18 @@ Como BEM não impõe que você replique a hierarquia HTML no nome das classes, s
 
 ```scss
 .header {
-	// styles
+  // styles
 
-    &__container {
-        // styles
-    }
-    &__toggler {
-        // styles
-    }
-    &__nav {
-        // styles
-    }
-	// ...
+  &__container {
+    // styles
+  }
+  &__toggler {
+    // styles
+  }
+  &__nav {
+    // styles
+  }
+  // ...
 }
 ```
 
