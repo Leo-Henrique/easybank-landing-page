@@ -128,22 +128,22 @@ Todos os estilos referente a UI são colocadas no arquivo `scss/utilities/_varia
 Confira alguns dos **mapas / variáveis** definidos neste arquivo:
 ```scss
 $fontSizes: (
-    h1: 5.6rem,
-    h2: 4.2rem,
+  h1: 5.6rem,
+  h2: 4.2rem,
 	h3: 2.6rem,
-    body: 1.8rem,
+  body: 1.8rem,
 	bodySm: 1.5rem,
 	small: 1.3rem
 );
 $colors: (
-    primary: #31d35c,
-    secondary: #2d314d,
+  primary: #31d35c,
+  secondary: #2d314d,
 	secondaryDark: darken(#2d314d, 40%), 
-    secondaryLight: #2bb7da,
-    supportLight1: #fff,
-    supportLight2: #fafafa,
-    supportLight3: #f3f4f6,
-    supportLight4: #9698a6,
+  secondaryLight: #2bb7da,
+  supportLight1: #fff,
+  supportLight2: #fafafa,
+  supportLight3: #f3f4f6,
+  supportLight4: #9698a6,
 );
 ```
 
@@ -153,15 +153,15 @@ No mesmo arquivo mencionado anteriormente, defino um mapa dedicado aos media que
 
 ```scss
 $mediaQuery: (
-    property: max-width,
-    unit: px,
-    sizes: (
-        sm: 575.98,
-        md: 767.98,
-        lg: 991.98,
-        xl: 1199.98,
-        xxl: 1399.98,
-    ),
+  property: max-width,
+  unit: px,
+  sizes: (
+    sm: 575.98,
+    md: 767.98,
+    lg: 991.98,
+    xl: 1199.98,
+    xxl: 1399.98,
+  ),
 );
 ```
 
@@ -169,15 +169,15 @@ Posteriormente, eu crio um mixin para breakpoints que é possível passar o pont
 
 ```scss
 @mixin breakpoint($size) {
-    @media (
+  @media (
 		#{map-get($mediaQuery, property)}:
 		#{
 			map-get(map-get($mediaQuery, sizes), $size) + 
 			map-get($mediaQuery, unit)
 		}
 	) {
-        @content;
-    }
+    @content;
+  }
 }
 ```
 
