@@ -94,24 +94,24 @@ Eu já havia utilizado `articles__title`, portanto segui a hierarquia HTML e uti
 
 ```jsx
 <article className="articles__item" >
-	<div className="articles__img">
-		<img src={image.src} 
-		alt={image.alt} />
-	</div>
+  <div className="articles__img">
+    <img src={image.src} 
+    alt={image.alt} />
+  </div>
 
-	<div className="articles__content">
-		<span className="articles__content__author">
-			Por {author}
-		</span>
+  <div className="articles__content">
+    <span className="articles__content__author">
+      Por {author}
+    </span>
 
-		<h3 className="articles__content__title">
-			<a href="#">{title}</a>
-		</h3>
+    <h3 className="articles__content__title">
+      <a href="#">{title}</a>
+    </h3>
 
-		<p className="articles__content__desc">
-			{desc}
-		</p>
-	</div>
+    <p className="articles__content__desc">
+      {desc}
+    </p>
+  </div>
 </article>
 ```
 
@@ -130,15 +130,15 @@ Confira alguns dos **mapas / variáveis** definidos neste arquivo:
 $fontSizes: (
   h1: 5.6rem,
   h2: 4.2rem,
-	h3: 2.6rem,
+  h3: 2.6rem,
   body: 1.8rem,
-	bodySm: 1.5rem,
-	small: 1.3rem
+  bodySm: 1.5rem,
+  small: 1.3rem
 );
 $colors: (
   primary: #31d35c,
   secondary: #2d314d,
-	secondaryDark: darken(#2d314d, 40%), 
+  secondaryDark: darken(#2d314d, 40%), 
   secondaryLight: #2bb7da,
   supportLight1: #fff,
   supportLight2: #fafafa,
@@ -170,12 +170,12 @@ Posteriormente, eu crio um mixin para breakpoints que é possível passar o pont
 ```scss
 @mixin breakpoint($size) {
   @media (
-		#{map-get($mediaQuery, property)}:
-		#{
-			map-get(map-get($mediaQuery, sizes), $size) + 
-			map-get($mediaQuery, unit)
-		}
-	) {
+    #{map-get($mediaQuery, property)}:
+    #{
+      map-get(map-get($mediaQuery, sizes), $size) + 
+      map-get($mediaQuery, unit)
+    }
+  ) {
     @content;
   }
 }
@@ -189,24 +189,24 @@ Confira um trecho da responsividade do rodapé do projeto:
 
 ```scss
 &__container {
-	display: flex;
-	column-gap: 12rem;
+  display: flex;
+  column-gap: 12rem;
 
-	@include breakpoint(xl) {
-		column-gap: 6rem;
-	}
-	@include breakpoint(lg) {
-		column-gap: 8rem;
-		row-gap: 6rem;
-		flex-wrap: wrap;
-		justify-content: center;
-	}
-	@include breakpoint(md) {
-		flex-direction: column;
-		align-items: center;
-		gap: initial;
-		text-align: center;
-	}
+  @include breakpoint(xl) {
+    column-gap: 6rem;
+  }
+  @include breakpoint(lg) {
+    column-gap: 8rem;
+    row-gap: 6rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  @include breakpoint(md) {
+    flex-direction: column;
+    align-items: center;
+    gap: initial;
+    text-align: center;
+  }
 }
 ```
 
@@ -222,13 +222,13 @@ Confira o uso deste mixin abaixo. Você pode entende-lo melhor no arquivo `scss/
 
 ```scss
 .logo {
-	// styles
+  // styles
 
-	@include state("button", (
-		default: (opacity: 1),
-		hover: (opacity: 0.7),
-		active: (opacity: 0.4)
-	));
+  @include state("button", (
+    default: (opacity: 1),
+    hover: (opacity: 0.7),
+    active: (opacity: 0.4)
+  ));
 }
 ```
 
