@@ -34,11 +34,10 @@ const Header = () => {
                 id="headerNav" 
                 ref={elementRef}>
                     <ul className="header__list">
-                        {menu.map((item) => (
+                        {menu.map(item => (
                             <li key={item} className="header__item">
                                 <a className="header__anchor" 
-                                href="#"
-                                aria-label={item}>
+                                href="#">
                                     {item}
                                 </a>
                             </li>

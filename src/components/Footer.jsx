@@ -30,8 +30,7 @@ const Footer = () => {
 							<ul>
 								{col.map(link => (
 									<li key={link}>
-										<a href="#"
-                                        aria-label={link}>{link}</a>
+										<a href="#">{link}</a>
 									</li>
 								))}
 							</ul>
