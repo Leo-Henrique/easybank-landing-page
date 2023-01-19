@@ -28,9 +28,10 @@ const Footer = () => {
 					className="footer__links">
 						<nav>
 							<ul>
-								{col.map((link, index) => (
-									<li key={index}>
-										<a href="#">{link}</a>
+								{col.map(link => (
+									<li key={link}>
+										<a href="#"
+                                        aria-label={link}>{link}</a>
 									</li>
 								))}
 							</ul>

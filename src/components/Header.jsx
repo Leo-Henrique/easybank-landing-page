@@ -26,16 +26,19 @@ const Header = () => {
                     aria-expanded={visibility}
                     aria-label={visibility ? "Fechar menu de navegação" : "Abrir menu de navegação"}
                     onClick={() => visibility || open()}
-                    ref={togglerRef}
-                >
+                    ref={togglerRef}>
                     {visibility ? <SVGClose /> : <SVGHamburger />}
                 </button>
 
-                <nav className="header__nav" id="headerNav" ref={elementRef}>
+                <nav className="header__nav" 
+                id="headerNav" 
+                ref={elementRef}>
                     <ul className="header__list">
                         {menu.map((item) => (
                             <li key={item} className="header__item">
-                                <a className="header__anchor" href="#">
+                                <a className="header__anchor" 
+                                href="#"
+                                aria-label={item}>
                                     {item}
                                 </a>
                             </li>
